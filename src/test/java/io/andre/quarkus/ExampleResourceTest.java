@@ -1,21 +1,20 @@
-// package io.andre.quarkus;
+package io.andre.quarkus;
 
-// import io.quarkus.test.junit.QuarkusTest;
-// import org.junit.jupiter.api.Test;
+import static io.restassured.RestAssured.given;
 
-// import static io.restassured.RestAssured.given;
-// import static org.hamcrest.CoreMatchers.is;
+import org.junit.jupiter.api.Test;
 
-// @QuarkusTest
-// public class ExampleResourceTest {
+import io.quarkus.test.junit.QuarkusTest;
 
-//     @Test
-//     public void testHelloEndpoint() {
-//         given()
-//           .when().get("/hello")
-//           .then()
-//              .statusCode(200)
-//              .body(is("[{\"age\":35,\"id\":1,\"name\":\"Andre\"}]"));
-//     }
+@QuarkusTest
+public class ExampleResourceTest {
 
-// }
+    @Test
+    public void testHelloEndpoint() {
+        given()
+          .when().get("/hello")
+          .then()
+             .statusCode(200);
+    }
+
+}
